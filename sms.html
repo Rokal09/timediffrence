@@ -1,0 +1,52 @@
+<form method="post" id="smsFrm" name="smsFrm"> 
+                <input type="hidden" value="ss" id="ssaction" name="ssaction">   
+                <input type="hidden" value="3408DC2E73EF213E2D60AD7C25FB656A.w809" id="Token" name="Token">
+                <div id="smilebox" style=" display:none;">
+                    <div class="smclo" style="cursor:pointer" onclick="javaScript:opensmilediv(0);">X</div>
+                    <div class="smiley-box">   
+                        <ul> 
+                            <li style="float: left;"> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-\\');"> <p class="sm1"> </p> </a> </li>
+                            <li style="float: left;"> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-D');"> <p class="sm2"> </p> </a> </li>  
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-)');"> <p class="sm3"> </p> </a> </li>  
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':x');"> <p class="sm4"> </p> </a> </li>  
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode('B-)');"> <p class="sm5"> </p> </a> </li>
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-(');"> <p class="sm6"> </p> </a> </li> 
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-[');"> <p class="sm7"> </p> </a> </li> 
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-|');"> <p class="sm8"> </p> </a> </li>    
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':\'(');"> <p class="sm9"> </p> </a> </li>    
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode('o_O');"> <p class="sm10"> </p> </a> </li>    
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-@');"> <p class="sm11"> </p> </a> </li>    
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode('O:-)');"> <p class="sm12"> </p> </a> </li>    
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(';-)');"><p class="sm13"> </p></a> </li> 
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-P');"><p class="sm14"> </p> </a> </li> 
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-*');"> <p class="sm15"> </p> </a> </li> 
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-$');"> <p class="sm16"> </p> </a> </li>
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-o');"> <p class="sm17"> </p> </a> </li>
+                            <li> <a href="javaScript:void(0);" ondragstart="return false" onclick="javaScript:getcode(':-)...');"> <p class="sm18"> </p> </a> </li>
+                        </ul>
+                        <h1>Smileys Collection</h1>
+                    </div>
+                </div>  
+                <div class="Sms fl">
+                    <label>Mobile Number</label>
+                    <div class="m91">
+                        <span>+91</span>
+	  
+                        <input type="text" id="mobile" name="mobile" placeholder="Mobile Number" maxlength="10" value="" onkeyup="javascript:dispLocMob(this);" onkeydown="javascript:dispLocMob(this);" onchange="javascript:dispLocMob(this);">
+
+                    
+                    </div>  
+                    <p id="locMob" onclick="javascript:locateMob();" style="cursor: pointer;display: none;"></p> 
+                    <label>Message</label> 
+
+                    <textarea id="message" placeholder="Type your message here or use SMS greetings" name="message" cols="45" rows="5" onkeydown="javascript:countChars('message', 'msgLen', 140, 'sndsms')" onkeyup="javascript:countChars('message', 'msgLen', 140)"></textarea>
+
+
+                    <div class="let">
+                        <p>Left : 
+                            <input type="text" name="msgLen" id="msgLen" value="140" readonly="readonly"></p>
+                        <div onclick="javaScript:opensmilediv(1);" class="smile" id="smilesym"><i class="ssms smilei"><em class="ei"></em></i></div>
+                        <input type="button" class="button br2up" onclick="return sendMessage();" id="Send" name="Send" value="Send SMS">
+                    </div>
+                </div>
+            </form>

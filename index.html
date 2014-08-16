@@ -1,0 +1,102 @@
+<html>
+<head>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+   
+</head>
+    
+<body>
+<h1>time diffrence calculator
+</h1>
+
+     <div id="in"></div>
+<div id="diff">
+Diff:    
+</div>
+    
+   
+    
+     <script>
+         $( document ).ready(function() {
+                var data="Hour&nbsp&nbsp";
+                data+="<select class='cal' id='hourin' >";   
+                for(var i=0;i<=12;i++)
+                data+="<option value='"+i+"'>"+i+"</option>";
+                data+=" </select>&nbsp&nbsp";
+                data+="Minute&nbsp&nbsp"
+                data+=" <select class='cal' id='minin'>"; 
+                for(var i=0;i<60;i++)
+                data+="<option value='"+i+"'>"+i+"</option>";
+                data+=" </select>&nbsp&nbsp";     
+                data+=" <select class='cal' id='amin'>";
+                data+="<option value='AM'>AM</option>";
+                data+="<option value='PM'>PM</option>";
+                data+=" </select></br>";
+                data+="Hour&nbsp&nbsp";
+                data+="<select class='cal' id='hourin' >";   
+                for(var i=0;i<=12;i++)
+                data+="<option value='"+i+"'>"+i+"</option>";
+                data+=" </select>&nbsp&nbsp";
+                data+="Minute&nbsp&nbsp"
+                data+=" <select class='cal' id='minin'>"; 
+                for(var i=0;i<60;i++)
+                data+="<option value='"+i+"'>"+i+"<span class>"+i+"</span></option>";
+                data+=" </select>&nbsp&nbsp";     
+                data+=" <select class='cal' id='amin'>";
+                data+="<option value='AM'>AM</option>";
+                data+="<option value='PM'>PM</option>";
+                data+=" </select>";   
+         
+            // console.log(data);
+             $("#in").html(data);
+            
+});
+         
+         
+    $( ".cal" ).change(function() {
+       // alert("hi");
+            var hourin=parseInt($("#hourin").val(),10);
+            var minin=parseInt($("#minin").val(),10);
+            var amin=$("#amin option:selected").text();
+            var hourout=parseInt($("#hourout").val(),10);
+            var minout=parseInt($("#minout").val(),10);
+            var amout=$("#amout option:selected").text();
+       
+//            if(amin=="PM")
+//                 hourin= hourin+12;
+//            if(amout=="PM")
+//                hourout=hourout+12;
+//            var hour=hourout-hourin;
+//            var min=minout-minin;
+//        if(min<0)
+//            min=60+min;
+//            if(hour<0)
+//                 hour=24+hour;
+            
+        var inp=hourin*60+minin;
+        var out=hourout*60+minout;
+       
+            if(amin=="PM")
+                 inp+=720;
+            if(amout=="PM")
+                out+=720;
+         var time=out-inp;
+        if(time<0)
+                time+=1440;
+        
+            var hour=parseInt(time/60,10);
+            
+        var min=time%60;
+        
+            //$diff=$out-$in;
+            
+            $("#diff").html("hour "+hour+"   min "+min);
+            
+        });
+        
+        $( ".hourout" ).change(function() {
+alert( "Handler for .change() called." );
+});
+    </script>
+</body>
+
+</html>
